@@ -1,0 +1,5 @@
+.env
+*.test.ts
+*.t.ts
+tsconfig.json
+.gitignore 

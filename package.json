@@ -1,0 +1,26 @@
+{
+	"name": "@anemonelab/sui-sdk",
+	"version": "1.0.1",
+	"description": "Anemone Sui SDK for frontend and backend integration",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "npx tsc",
+		"prepare": "npm run build"
+	},
+	"dependencies": {
+		"@mysten/sui": "1.14.2"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.10",
+		"typescript": "^5.0.0",
+		"dotenv": "^16.4.7"
+	},
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	}
+}
