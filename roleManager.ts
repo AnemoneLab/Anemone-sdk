@@ -147,6 +147,27 @@ export class RoleManager {
     }
 
     /**
+     * Update the skills array with a new set of skills
+     * @param roleId - The Role object ID
+     * @param botNftId - The Bot NFT object ID
+     * @param skillIds - Array of skill IDs to set
+     */
+    async updateSkills(roleId: string, botNftId: string, skillIds: string[]) {
+        const tx = new Transaction();
+        
+        tx.moveCall({
+            target: `${PACKAGE_ID}::role_manager::update_skills`,
+            arguments: [
+                tx.object(roleId),
+                tx.object(botNftId),
+                tx.pure.vector("id", skillIds)
+            ],
+        });
+        
+        return tx;
+    }
+
+    /**
      * Withdraw SUI using Bot NFT ownership verification
      * @param roleId - The Role object ID
      * @param botNftId - The Bot NFT object ID
