@@ -10,6 +10,7 @@ export class RoleManager {
      * @param name - Role name
      * @param description - Role description
      * @param imgUrl - Role image URL
+     * @param appId - Phala CVM app ID
      * @param suiAmount - Amount of SUI to deposit (in MIST)
      */
     async createRole(
@@ -17,6 +18,7 @@ export class RoleManager {
         name: string,
         description: string,
         imgUrl: string,
+        appId: string,
         suiAmount: bigint
     ) {
         const tx = new Transaction();
@@ -31,6 +33,7 @@ export class RoleManager {
                 tx.pure.string(name),
                 tx.pure.string(description),
                 tx.pure.string(imgUrl),
+                tx.pure.string(appId),
                 coin
             ],
         });
